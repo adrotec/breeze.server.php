@@ -43,6 +43,7 @@ class QueryService {
         
         if ($fetchJoinCollection || $fetchCount) {
             $paginator = new Paginator($query, $fetchJoinCollection);
+            $paginator->setUseOutputWalkers(false);
             if ($fetchCount) {
                 $inlineCount = count($paginator);
             }
